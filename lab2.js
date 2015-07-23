@@ -225,13 +225,10 @@ var array2 = [2, 4, 6, 8];
 assert(sumArray(array2) === 20, 'sum is not done properly');
 assert(sumArray(array2) !== 19, 'sum is not done properly');
 
-var superArray = [[2,4,6,8,], [1,2,3,4], [10,20,30,40]];
-var backupArray = superArray;
-
-console.log(superArray);
+var superArray = [[2, 4, 6, 8], [1, 2, 3, 4], [10, 20, 30, 40]];
 
 function sumSort(arrayOfArrays) {
-  arrayOfArrays.sort(function(a, b) {
+  return arrayOfArrays.slice(0).sort(function(a, b) {
     // TODO: implement me using sumArray
     //  order the arrays based on the sum of the numbers
     //  inside each array
@@ -243,17 +240,12 @@ function sumSort(arrayOfArrays) {
     }
     return 0;
   });
-  return arrayOfArrays;
 }
 
 var sortedSuperAray = sumSort(superArray);
 
-console.log(superArray + ' superArray called after the sort function');
-console.log(sortedSuperAray);
-
-
-assert(sumArray(sortedSuperAray[0]) !== sumArray(backupArray[0]), 'Arrays were not sorted');
-assert(sumArray(sortedSuperAray[1]) !== sumArray(backupArray[1]), 'Arrays were not sorted');
+assert(sumArray(sortedSuperAray[0]) !== sumArray(superArray[0]), 'Arrays were not sorted');
+assert(sumArray(sortedSuperAray[1]) !== sumArray(superArray[1]), 'Arrays were not sorted');
 
 //*********************************************************
 // PROBLEM 4: Cleanup: 10 points
